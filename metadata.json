@@ -1,0 +1,6 @@
+{
+  "name": "Abe's Celestial Birthday Quest",
+  "description": "A modern, romantic, and interactive birthday landing page and riddle quest for Abe (Apple), built with glowing gradients, frosted glass aesthetics, and interactive celebrations.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
