@@ -1365,8 +1365,7 @@
       background-image: 
         radial-gradient(circle at 50% 25%, rgba(14, 20, 36, 0.45) 0%, rgba(8, 11, 20, 0.85) 80%),
         linear-gradient(180deg, rgba(8, 11, 20, 0.65) 0%, rgba(13, 20, 38, 0.72) 48%, rgba(8, 11, 20, 0.90) 100%),
-        url('/nature_background.jpg'),
-        url('nature_background.jpg');
+        url('/nature_background.jpg');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -1812,11 +1811,15 @@
     .main-birthday-image {
       width: 100%;
       height: auto;
-      aspect-ratio: 4 / 3;
+      max-height: 520px;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
+      object-position: center 25%;
       border-radius: 18px;
       display: block;
-      box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+      background: #1e1338;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .photo-caption-badge {
@@ -2659,7 +2662,16 @@
 
           <!-- This is the section of your code where the main photo goes -->
           <div class="birthday-photo-container">
-            <img src="apple_birthday.jpg" alt="Happy Birthday Apple" class="main-birthday-image">
+            <img 
+              id="mainBirthdayImage" 
+              src="/apple_birthday.jpg" 
+              alt="Happy Birthday Apple" 
+              class="main-birthday-image" 
+              loading="eager" 
+              decoding="async" 
+              referrerpolicy="no-referrer"
+              onerror="if (this.src.indexOf('apple_birthday_new.jpg') === -1) { this.src='/apple_birthday_new.jpg'; } else if (this.src.indexOf('apple_birthday.jpg') === -1) { this.src='apple_birthday.jpg'; }"
+            >
             <div class="photo-caption-badge">
               <span>✨</span> Queen of the Day: Apple in Manila <span>✨</span>
             </div>
